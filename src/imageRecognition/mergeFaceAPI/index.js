@@ -11,9 +11,8 @@ async function main() {
     ["merge_rate", args.merge_rate || "50"],
   )
 
-
   saveB64ImageToFile(r.result, args.outFile);
-  console.log('Saved to: ', args.outFile);
+  console.log('Saved to:', args.outFile);
 }
 
 main();

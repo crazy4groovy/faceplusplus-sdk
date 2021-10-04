@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
+    "br:hbs": "node ./src/bodyRecognition/humanyBodySegmentAPI/index.js",
     "fr:c": "node ./src/facialRecognition/compareAPI/index.js",
     "fr:d": "node ./src/facialRecognition/detectAPI/index.js",
+    "fr:fa": "node ./src/facialRecognition/faceAnalyseAPI/index.js",
     "imr:mf": "node ./src/imageRecognition/mergeFaceAPI/index.js",
     "test": "echo \"NO TESTS\""
   },

@@ -6,10 +6,10 @@ import args from "./argv.js";
 
 async function main() {
   const r = await client(
-    "https://api-us.faceplusplus.com/facepp/v3/detect",
+    "https://api-us.faceplusplus.com/facepp/v3/face/analyze",
     ["return_landmark", args.returnLandmark || "1"],
     ["return_attributes", args.returnAttributes?.join(',') || "gender,age,smiling,emotion,beauty"],
-    ["image_file", await fileFromPath(args.imageFile)],
+    ["face_tokens", args.faceTokens?.join(',')],
   )
 
   console.log(r);
