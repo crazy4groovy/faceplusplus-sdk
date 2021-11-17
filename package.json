@@ -1,6 +1,6 @@
 {
   "name": "faceplusplus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "https://www.faceplusplus.com/face-detection/#demo",
   "main": "src/index.js",
   "type": "module",
@@ -16,8 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "commander": "~8.2.0",
-    "formdata-node": "~4.2.4",
-    "node-fetch": "~3.0.0"
+    "commander": "~8.3.0",
+    "formdata-node": "~4.3.1",
+    "node-fetch": "~3.1.0"
   }
 }

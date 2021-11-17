@@ -1,6 +1,6 @@
 import { fileFromPath } from "formdata-node/file-from-path";
 
-import client, {saveB64ImageToFile} from "../../client.js";
+import client, { saveB64ImageToFile } from "../../client.js";
 import args from "./argv.js";
 
 async function main() {

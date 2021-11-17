@@ -13,6 +13,7 @@ async function main() {
   )
 
   console.log(r);
+  return r;
 }
 
 main();
