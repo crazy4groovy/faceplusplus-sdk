@@ -1,6 +1,6 @@
 {
   "name": "faceplusplus-sdk",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A JavaScript SDK / API client for common FPP APIs",
   "homepage": "https://github.com/crazy4groovy/faceplusplus-sdk#readme",
   "main": "index.js",

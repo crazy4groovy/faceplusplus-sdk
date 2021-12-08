@@ -20,17 +20,36 @@ const result = await bHumanBodyDetectAPI({
 })
 ```
 
-## `creds-fpp.json` file
+## Auth credentials
 
 **REQUIRED**!
 
-Create a `creds-fpp.json` file in the `process.cwd()` (root) of the app. You can make a [free account](https://console.faceplusplus.com/documents/6329693) to get your [API key and secret](https://console.faceplusplus.com/app/apikey/list):
+You can make a [free account](https://console.faceplusplus.com/documents/6329693) to get your [API key and secret](https://console.faceplusplus.com/app/apikey/list).
+
+If credentials are not set correctly, the api client will throw an Error.
+
+### Option 1: `creds-fpp.json`
+
+Create a `creds-fpp.json` file in the app's `process.cwd()` (root):
 
 ```json
 {
   "api_key": "...",
   "api_secret": "..."
 }
+```
+
+### Option 2: `configCreds`
+
+Import `configCreds` function to set your auth credentials:
+
+```js
+import { configCreds } from "faceplusplus-sdk";
+...
+configCreds({
+  api_key: "...",
+  api_secret: "..."
+});
 ```
 
 ## APIs
@@ -71,7 +90,7 @@ More info about [face_token](https://console.faceplusplus.com/documents/5679127)
 
 ## Input image files, eg. for `image_file`, etc
 
-Please use the peer dependency `formdata-node/file-from-path`, for example:
+Please use the peer dependency `formdata-node` / `file-from-path`, for example:
 
 ```js
 import { anyAPIExample } from "faceplusplus-sdk";
@@ -98,3 +117,11 @@ function saveB64ImageToFile(base64Data, filepath) {
   fs.writeFileSync(filepath, buffer);
 }
 ```
+
+## CLI scripts
+
+If you `git clone` this repo, there are npm scripts you can run that provide a command line interface to the library API client. See `package.json` for a list of scripts available.
+
+## Notebooks
+
+If you `git clone` this repo, there are [VS restbook](https://github.com/tanhakabir/rest-book#usage) notebooks you can run that provide a GUI to the API raw endpoints. See `/notebooks` for a list of available restbooks.

@@ -6,3 +6,4 @@ export { default as fDetectAPI } from "./src/facialRecognition/detectAPI/api.js"
 export { default as fFaceAnalyzeAPI } from "./src/facialRecognition/faceAnalyzeAPI/api.js";
 export { default as fSkinAnalyzeAPI } from "./src/facialRecognition/skinAnalyzeAPI/api.js";
 export { default as iMergeFaceAPI } from "./src/imageRecognition/mergeFaceAPI/api.js";
+export { configCreds } from "./src/client.js";
