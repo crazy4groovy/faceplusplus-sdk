@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import { FormData } from "formdata-node";
 
 const config = JSON.parse(
-  fs.readFileSync(path.join(process.cwd(), "creds.json"), "utf8")
+  fs.readFileSync(path.join(process.cwd(), "creds-fpp.json"), "utf8")
 );
 
 export default async (url, formNamesValues) => {

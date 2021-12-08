@@ -1,6 +1,6 @@
 # FacePlusPlus API client
 
-A JavaScript API client for common FPP APIs, for example:
+A JavaScript SDK / API client for common FPP APIs, for example:
 
 - [face-detection](https://www.faceplusplus.com/face-detection/#demo)
 - [body demo](https://console.faceplusplus.com/service/body/intro)
@@ -20,11 +20,11 @@ const result = await bHumanBodyDetectAPI({
 })
 ```
 
-## `creds.json` file
+## `creds-fpp.json` file
 
 **REQUIRED**!
 
-Create a `creds.json` file in the root directory of the project. You can make a [free account](https://console.faceplusplus.com/documents/6329693) to get your [API key and secret](https://console.faceplusplus.com/app/apikey/list):
+Create a `creds-fpp.json` file in the `process.cwd()` (root) of the app. You can make a [free account](https://console.faceplusplus.com/documents/6329693) to get your [API key and secret](https://console.faceplusplus.com/app/apikey/list):
 
 ```json
 {

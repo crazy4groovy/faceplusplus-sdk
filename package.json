@@ -1,8 +1,10 @@
 {
-  "name": "faceplusplus-api-client",
+  "name": "faceplusplus-sdk",
   "version": "1.0.1",
-  "description": "https://www.faceplusplus.com/face-detection/#demo",
+  "description": "A JavaScript SDK / API client for common FPP APIs",
+  "homepage": "https://github.com/crazy4groovy/faceplusplus-sdk#readme",
   "main": "index.js",
+  "bin": {},
   "type": "module",
   "scripts": {
     "b:hbd": "node ./src/bodyRecognition/humanBodyDetectAPI/cli.js",
@@ -13,11 +15,21 @@
     "f:fa":  "node ./src/facialRecognition/faceAnalyzeAPI/cli.js",
     "f:sa":  "node ./src/facialRecognition/skinAnalyzeAPI/cli.js",
     "i:mf":  "node ./src/imageRecognition/mergeFaceAPI/cli.js",
-    "test": "echo \"NO TESTS, tsk tsk!\""
+    "test":  "echo \"NO TESTS, tsk tsk!\""
   },
-  "keywords": ["face++", "faceplusplus", "image", "face", "api", "client"],
+  "keywords": [
+    "face++",
+    "faceplusplus",
+    "image",
+    "face",
+    "api",
+    "client"
+  ],
   "author": "@crazy4groovy",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.x"
+  },
   "dependencies": {
     "commander": "~8.3.0",
     "formdata-node": "~4.3.1",
