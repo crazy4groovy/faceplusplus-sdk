@@ -5,12 +5,15 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "br:hbs": "node ./src/bodyRecognition/humanyBodySegmentAPI/index.js",
-    "fr:c": "node ./src/facialRecognition/compareAPI/index.js",
-    "fr:d": "node ./src/facialRecognition/detectAPI/index.js",
-    "fr:fa": "node ./src/facialRecognition/faceAnalyseAPI/index.js",
-    "imr:mf": "node ./src/imageRecognition/mergeFaceAPI/index.js",
-    "test": "echo \"NO TESTS\""
+    "b:hbd": "node ./src/bodyRecognition/humanBodyDetectAPI/cli.js",
+    "b:hbs": "node ./src/bodyRecognition/humanBodySegmentAPI/cli.js",
+    "f:c":   "node ./src/facialRecognition/compareAPI/cli.js",
+    "f:dfl": "node ./src/facialRecognition/denseFacialLandmarkAPI/cli.js",
+    "f:d":   "node ./src/facialRecognition/detectAPI/cli.js",
+    "f:fa":  "node ./src/facialRecognition/faceAnalyzeAPI/cli.js",
+    "f:sa":  "node ./src/facialRecognition/skinAnalyzeAPI/cli.js",
+    "i:mf":  "node ./src/imageRecognition/mergeFaceAPI/cli.js",
+    "test": "echo \"NO TESTS, tsk tsk!\""
   },
   "keywords": [],
   "author": "",

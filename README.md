@@ -6,7 +6,7 @@
 
 ## creds.json
 
-Create this file in the root directory, it's required. Make a [free account](https://console.faceplusplus.com/documents/6329693) to get an [API key and secret](https://console.faceplusplus.com/app/apikey/list).
+REQUIRED: Create a `creds.json` file in the root directory. Make a [free account](https://console.faceplusplus.com/documents/6329693) to get an [API key and secret](https://console.faceplusplus.com/app/apikey/list):
 
 ```json
 {
@@ -14,3 +14,7 @@ Create this file in the root directory, it's required. Make a [free account](htt
   "api_secret": "..."
 }
 ```
+
+## out_file format
+
+.png

@@ -18,10 +18,3 @@ export default async (url, ...formSetterPairs) => {
     body: form,
   }).then((r) => r.json());
 };
-
-// Utilities //
-
-export const saveB64ImageToFile = (base64Data, filepath) => {
-  const buffer = Buffer.from(base64Data, "base64");
-  fs.writeFileSync(filepath, buffer);
-};

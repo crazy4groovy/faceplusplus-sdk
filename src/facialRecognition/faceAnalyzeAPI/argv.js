@@ -4,7 +4,7 @@ import { Command } from 'commander';
 const program = new Command();
 
 export default program
-  .option("-f, --face_tokens <f><space...>", "face_tokens")
+  .option("-f, --faceTokens <f><space...>", "face_tokens")
   .option("-l, --returnLandmark <l>", "return_landmark")
   .option("-a, --returnAttributes <a><space...>", "return_attributes")
   .parse(process.argv)

@@ -1,11 +1,11 @@
 import { fileFromPath } from "formdata-node/file-from-path";
 
-import client, { saveB64ImageToFile } from "../../client.js";
+import saveB64ImageToFile from "../../saveB64ImageToFile.js";
 import args from "./argv.js";
+import api from "./api.js";
 
 async function main() {
-  const r = await client(
-    "https://api-us.faceplusplus.com/imagepp/v1/mergeface",
+  const r = await api(
     ["template_file", await fileFromPath(args.templateFile)],
     ["merge_file", await fileFromPath(args.mergeFile)],
     ["merge_rate", args.merge_rate || "50"],
