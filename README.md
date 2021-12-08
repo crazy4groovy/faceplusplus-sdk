@@ -7,16 +7,16 @@ A JavaScript SDK / API client for common FPP APIs, for example:
 
 ## Usage
 
-`npm i faceplusplus-api-client`
+`npm i faceplusplus-sdk`
 
 ```javascript
-import { bHumanBodyDetectAPI } from 'faceplusplus-api-client`;
+import { bHumanBodyDetectAPI } from "faceplusplus-sdk";
 
 ...
 
 const result = await bHumanBodyDetectAPI({
   return_attributes: 'gender,upper_body_cloth,lower_body_cloth',
-  image_file: '~/myimage.jpg',
+  image_file: '~/myimage.jpg', // see image_file note below!
 })
 ```
 
@@ -36,37 +36,65 @@ Create a `creds-fpp.json` file in the `process.cwd()` (root) of the app. You can
 ## APIs
 
 - [bHumanBodyDetectAPI](https://console.faceplusplus.com/documents/10880589):
-  - -i, --imageFile
-  - -a, --returnAttributes
+  - image_file
+  - return_attributes
 - [bHumanBodySegmentAPI](https://console.faceplusplus.com/documents/40608260):
-  - -o, --outFile
-  - -i, --imageFile
-  - -g, --returnGrayscale
+  - out_file
+  - image_file
+  - return_grayscale
 - [fCompareAPI](https://console.faceplusplus.com/documents/5679308):
-  - -1, --imageFile1
-  - -2, --imageFile2
+  - image_file1
+  - image_file2
 - [fDenseFacialLandmarkAPI](https://console.faceplusplus.com/documents/55107053):
-  - -f, --faceToken
-  - -i, --imageFile
-  - -l, --returnLandmark
+  - face_token
+  - image_file
+  - return_landmark
 - [fDetectAPI](https://console.faceplusplus.com/documents/5679127):
-  - -i, --imageFile
-  - -l, --returnLandmark
-  - -a, --returnAttributes
+  - image_file
+  - return_landmark
+  - return_attributes
 - [fFaceAnalyzeAPI](https://console.faceplusplus.com/documents/6329465):
-  - -f, --faceTokens
-  - -l, --returnLandmark
-  - -a, --returnAttributes
+  - face_tokens
+  - return_landmark
+  - return_attributes
 - [fSkinAnalyzeAPI](https://console.faceplusplus.com/documents/129100210):
-  - -i, --imageFile
+  - image_file
 - [iMergeFaceAPI](https://console.faceplusplus.com/documents/20815649):
-  - -o, --outFile
-  - -t, --templateFile
-  - -m, --mergeFile
-  - -r, --mergeRate
+  - out_file
+  - template_file
+  - template_url
+  - merge_file
+  - merge_url
+  - merge_rate
 
 More info about [face_token](https://console.faceplusplus.com/documents/5679127).
 
-## Image format of `--outFile`
+## Input image files, eg. for `image_file`, etc
+
+Please use the peer dependency `formdata-node/file-from-path`, for example:
+
+```js
+import { anyAPIExample } from "faceplusplus-sdk";
+import { fileFromPath } from "formdata-node/file-from-path";
+...
+const r = await anyAPIExample({
+  image_file: await fileFromPath(pathToImageFile),
+});
+```
+
+## Image format of `out_file`
 
 PNG / .png
+
+## Tip: How to write a base64 image result to a file (NodeJS)
+
+A simple example:
+
+```js
+import fs from "fs";
+
+function saveB64ImageToFile(base64Data, filepath) {
+  const buffer = Buffer.from(base64Data, "base64");
+  fs.writeFileSync(filepath, buffer);
+}
+```

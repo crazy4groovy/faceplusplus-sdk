@@ -13,7 +13,9 @@ export default async (url, formNamesValues) => {
   form.set("api_secret", config.api_secret);
 
   Object.entries(formNamesValues).forEach(([name, value]) => {
-    form.set(name, value);
+    if (value !== undefined) {
+      form.set(name, value);
+    }
   });
 
   return await fetch(url, {
