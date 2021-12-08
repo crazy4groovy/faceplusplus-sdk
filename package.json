@@ -1,8 +1,8 @@
 {
-  "name": "faceplusplus",
+  "name": "faceplusplus-api-client",
   "version": "1.0.1",
   "description": "https://www.faceplusplus.com/face-detection/#demo",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "b:hbd": "node ./src/bodyRecognition/humanBodyDetectAPI/cli.js",
@@ -15,8 +15,8 @@
     "i:mf":  "node ./src/imageRecognition/mergeFaceAPI/cli.js",
     "test": "echo \"NO TESTS, tsk tsk!\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["face++", "faceplusplus", "image", "face", "api", "client"],
+  "author": "@crazy4groovy",
   "license": "ISC",
   "dependencies": {
     "commander": "~8.3.0",

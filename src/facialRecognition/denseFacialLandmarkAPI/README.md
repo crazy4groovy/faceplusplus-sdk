@@ -13,4 +13,4 @@ curl -X POST "https://api-us.faceplusplus.com/facepp/v1/face/thousandlandmark" -
 
 ## Docs
 
-https://console.faceplusplus.com/documents/6329465
+https://console.faceplusplus.com/documents/55107053

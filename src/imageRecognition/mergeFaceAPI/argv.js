@@ -1,4 +1,4 @@
-import { Command } from 'commander';
+import { Command } from "commander";
 
 // https://www.npmjs.com/package/commander
 const program = new Command();

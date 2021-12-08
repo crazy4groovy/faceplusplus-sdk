@@ -7,9 +7,9 @@ import args from "./argv.js";
 import api from "./api.js";
 
 async function main() {
-  const r = await api(
-    ["image_file", await fileFromPath(args.imageFile)],
-  )
+  const r = await api({
+    image_file: await fileFromPath(args.imageFile),
+  });
 
   console.log(stringify(r));
 }
