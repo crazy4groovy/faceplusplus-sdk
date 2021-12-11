@@ -52,15 +52,37 @@ configCreds({
 });
 ```
 
+## QPS rate throttle
+
+**OPTIONAL**!
+
+You can configure a basic throttle to help maintain the [QPS](https://www.faceplusplus.com/v2/pricing/) rate limits of your account. Import `configQPS` function to set your throttle delay times:
+
+```js
+import { configQPS } from "faceplusplus-sdk";
+...
+configQPS({
+  beforeCallDelaySeconds: 0, // default
+  afterCallDelaySeconds: 0, // default
+});
+```
+
+- `beforeCallDelaySeconds`: Before the API call is made, start this timer delay.
+  - Effective timer delay: `beforeCallDelaySeconds` - `API_CALL_DURATION`
+- `afterCallDelaySeconds`: After the API call is made, start this timer delay.
+  - Effective timer delay: `afterCallDelaySeconds` + `API_CALL_DURATION`
+
+Note: API call will only return when *all* timers have expired.
+
 ## APIs
 
 - [bHumanBodyDetectAPI](https://console.faceplusplus.com/documents/10880589):
   - image_file
   - return_attributes
 - [bHumanBodySegmentAPI](https://console.faceplusplus.com/documents/40608260):
-  - out_file
   - image_file
   - return_grayscale
+  - > response: `.body_image` (A base64 encoded ~~JPG~~ PNG image)
 - [fCompareAPI](https://console.faceplusplus.com/documents/5679308):
   - image_file1
   - image_file2
@@ -79,12 +101,12 @@ configCreds({
 - [fSkinAnalyzeAPI](https://console.faceplusplus.com/documents/129100210):
   - image_file
 - [iMergeFaceAPI](https://console.faceplusplus.com/documents/20815649):
-  - out_file
   - template_file
   - template_url
   - merge_file
   - merge_url
   - merge_rate
+  - > response: `.result` (A base64 encoded JPG image, size of template image)
 
 More info about [face_token](https://console.faceplusplus.com/documents/5679127).
 
@@ -100,10 +122,6 @@ const r = await anyAPIExample({
   image_file: await fileFromPath(pathToImageFile),
 });
 ```
-
-## Image format of `out_file`
-
-PNG / .png
 
 ## Tip: How to write a base64 image result to a file (NodeJS)
 
